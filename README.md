@@ -1,4 +1,4 @@
-Seamate is an add-on for [Seahub](https://github.com/haiwen/seahub), the web interface of the file syncing and sharing software Seafile, that allows the easy modification of Seahub‘s look. 
+Seamate is an add-on for [Seahub](https://github.com/haiwen/seahub), the web interface of the file syncing and sharing software [Seafile](https://github.com/haiwen/seafile), that allows the easy modification of Seahub‘s look. 
 
 It integrates in the global settings of Seahub and requires no coding knowledge whatsoever. Modifying Seahub to meet your personal / corporate standards is no more than changing a few field values in the familiar Seahub settings.
 
@@ -39,6 +39,8 @@ The custom CSS field in the Branding box can be used to manipulate any other CSS
 ## Change log
 ### Seamate 1.0 (DATE)
 Initial release of Seamate
+
+Release statement in the [Seafile Forum](...)
 
 
 ## Compatability list
