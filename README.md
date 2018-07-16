@@ -3,10 +3,14 @@ Seamate is an add-on for [Seahub](https://github.com/haiwen/seahub), the web int
 It integrates in the global settings of Seahub and requires no coding knowledge whatsoever. Modifying Seahub to meet your personal / corporate standards is no more than changing a few field values in the familiar Seahub settings.
 
 ## Technical implementation
+Seamate writes the customized field values in the Seahub database. Modified HTML templates call these variables every time a Seahub page is loaded.
 
-TBD
+The implementation approach entails the following consequences:
+* ENABLE_SETTINGS_VIA_WEB = True in seahub_settings.py is precondition:
+* Seamate integrates on a low level: Changes made in custom HTML or CSS files overwrite changes mode in Seamate.
+* Seamate can't handle Seafile upgrades: When you upgrade Seafile, Seahub loads a fresh set of HTML templates and the changes do not apply any more.
 
-Seahub employs more than xxx  CSS classes. With Seamate, some 35 can be modified right within Seahub. Why "only" this small fraction? Things get unwieldy quickly! We believe -- till proven wrong -- that the set of configurable parameters meets the demand of the large majority of Seamate users. For all other uses, more classes would mean more headache. Additionally, all those that wish to take the customization even further can still import a separate custom CSS file or make use of the custom CSS in the Seahub settings.
+Seahub employs more than xxx  CSS classes. With Seamate, some 35 can be modified right within Seahub. Why "only" this small fraction? Things get unwieldy quickly! We believe -- till proven wrong -- that the set of configurable parameters meets the demand of the large majority of Seamate users. For all other uses, more classes would mean more headache. Additionally, all those that wish to take the customization even further can still import separate custom HTML/CSS files or make use of the custom CSS in the Seahub settings.
 
 ## Use
 Seamate expands the Branding section in the settings menu in Seahub's admin panel. Seahub-wide (global) settings can be set and individual changes made to Seahub's five central UI elements (login, top bar, navigation sidebar, main, and popups). Whenever possible, colorpickers or dropdown lists are provided for ease of use.
@@ -33,8 +37,10 @@ The custom CSS field in the Branding box can be used to manipulate any other CSS
 
 ## Installation
 
-1. 
-2. Restart seahub
+0. Safety first: Go to the current Seafile Server folder ~/seafile-server-latest/ and backup the seahub folder (~200MB)
+1. Download Seamate and unzip to find several folders
+2. Copy the content of the folder which fits your Seafile version into ~/seafile-server-latest/ - some new files are created, some overwritten (disregard the other folders)
+3. Restart seahub
 
 ## Change log
 ### Seamate 1.0 (DATE)
